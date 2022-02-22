@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<meta charset="utf-8">
+<html lang="jp">
+	<head>
+		<title>システム</title>
+
+		<!-- CSS Files -->
+		<link type="text/css" href="graph_view.css" rel="stylesheet" />
+		<link type="text/css" href="tree.css" rel="stylesheet" />
+
+		<!-- Library File -->
+		<!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://kit.fontawesome.com/6f0b469940.js" crossorigin="anonymous"></script>
+
+		<!-- Javascript File -->
+		<script type="text/javascript" src="../js/zikken_graph.js"></script>
+    <script type="text/javascript" src="../js/zikken_tweet.js"></script>
+		<script type="text/javascript" src="../js/zikken_discussion.js"></script>
+		<script type="text/javascript" src="../js/zikken_tree.js"></script>
+		<script type="text/javascript" src="../js/graph_view.js"></script>
+		<script type="text/javascript" src="../js/favorite.js"></script>
+
+
+
+
+	</head>
+	<body onload="exec();">
+
+  <!-- <body> -->
+
+	<div id="container">
+
+		<div id="left-container">
+
+			<!-- <h2>議論選択</h2> -->
+
+			<ul class="tab-menu" id="tab-menu">
+			</ul>
+
+			<div class="tab-content" id="tab-content">
+
+			</div><!-- .tab-content -->
+
+			<div class='hint'>
+				<button class="hint_button" type="button" onclick="click_hint()">ヒント</button>
+			</div>
+
+		</div>
+
+
+			<hr />
+
+
+		<div id="center-container">
+		</div>
+
+		<div id="right-top-container"></div>
+    <div id="right-under-container">
+			<!-- ▼twitter風ここから -->
+		  <div class="twitter__container">
+		    <!-- タイトル -->
+		    <div class="twitter__title">
+		      <span class="twitter-logo"></span>
+		    </div>
+
+		    <!-- ▼タイムラインエリア scrollを外すと高さ固定解除 -->
+		    <div class="twitter__contents scroll">
+
+		      <!-- 記事エリア -->
+						<div id='twitter_wrapper'>
+			      	<div class="twitter__block" id="twitter_block">
+			        </div>
+			      </div>
+					</div>
+
+
+		    </div>
+		    <!--　▲タイムラインエリア ここまで -->
+		  </div>
+		  <!--　▲twitter風ここまで -->
+			<script type="text/javascript" src="../js/tree_view.js"></script>
+
+    </div>
+	</body>
+</html>

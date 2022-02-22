@@ -1,0 +1,462 @@
+html, body {
+	margin:0;
+	padding:0;
+	font-size: 0.9em;
+	/* text-align: center; */
+	background-color:#F2F2F2;
+}
+
+h2 {
+	color:blue;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+}
+
+
+#container {
+	width: 1800px;
+	height: 800px;
+	/* margin:0 auto; */
+	position:relative;
+}
+
+#center-container
+ {
+	height:800px;
+	width:900px;
+	position:absolute;
+	top:0;
+	width:1000px;
+	left:450px;
+	background-color:white;
+	color:#ccc;
+}
+#left-container{
+	height:800px;
+	width:450px;
+	position:absolute;
+	top:0;
+}
+
+
+#right-top-container,
+#right-under-container{
+	height:400px;
+	width:500px;
+	position:absolute;
+	left:1000px;
+	background-color:white;
+}
+
+
+
+
+#right-top-container{
+	top:0px;
+	border: solid 1px #eeeeee;
+	background-color:#f8f8ff;
+}
+#right-under-container{
+	top:400px;
+}
+
+.title {
+	padding-top: 10px;
+	color: #0000cd;
+	margin: 5px;
+	font-size:1.3em;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+}
+
+select {
+	font-size: 14px;
+	width: 180px;
+}
+
+input {
+	font-size: 14px;
+	width: 80px;
+}
+
+
+
+
+
+input#unlock,
+input#shake {
+	font-size: 14px;
+	width: 95px;
+}
+input#rank{
+  font-size: 13px;
+  width: 110px;
+}
+
+input#g0_black,
+input#g0_zero {
+	font-size: 14px;
+	width: 40px;
+}
+
+.link {
+  stroke: #ccc;
+}
+
+.node text {
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+
+.twitter__container {
+  padding: 0;
+  background: #ffffff;
+  overflow: hidden;
+  max-width: 500px;
+  /* margin: 20px auto; */
+  font-size: 80%;
+  border: solid 1px #eeeeee;
+}
+
+.twitter__container a {
+  color: #58aeed;
+}
+
+/* タイトル部分 */
+.twitter__container .twitter__title {
+  background: #58aeed;
+  padding: 10px;
+  text-align: center;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+.twitter__container .twitter__title .twitter-logo {
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url(svg/twitter-logo.svg) center no-repeat;
+}
+
+.twitter__container .twitter__title span {
+  font-size: 20px;
+}
+
+/* タイムライン部分 */
+.twitter__container .twitter__contents .id_list {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+}
+
+.twitter__container .twitter__contents.scroll {
+  height: 358px;
+  overflow-y: scroll;
+}
+
+.twitter__container .twitter__block {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  /* margin-bottom: 5px; */
+  border-bottom: solid 1px #eeeeee;
+  overflow: hidden;
+}
+
+.twitter__container .twitter__block:last-child {
+  border-bottom: solid 0px;
+}
+/* アイコン画像 */
+.twitter__container .twitter__block figure {
+  width: 50px;
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 50px;
+}
+  /* 正方形を用意 */
+.twitter__container .twitter__block figure img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+/* コメントエリア */
+.twitter__container .twitter__block-text {
+  margin: 0;
+  position: relative;
+  margin-left: 50px;
+  padding-right: 25px;
+}
+
+.twitter__container .twitter__block-text .name {
+  font-weight: bold;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.twitter__container .twitter__block-text .name .name_reply {
+  color: #8a9aa4;
+  margin-left: 10px;
+}
+
+.twitter__container .twitter__block-text .date {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  text-align: right;
+  color: #8a9aa4;
+}
+/* 本文 */
+.twitter__container .twitter__block-text .text {
+  margin: 5px 0;
+  text-align: left;
+  margin-left: 5px;
+}
+/* 画像を貼る場合 */
+.twitter__container .twitter__block-text .text .in-pict img {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  margin: 5px 0;
+  width: 95%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/*///////////////////////////////////////////
+//埋め込みアイコン
+////////////////////////////////////////////*/
+
+.twitter__container .twitter__icon br{
+  display: none;
+}
+
+.twitter__container .twitter__icon .twitter-bubble {
+  width: 10px;
+  height: 14px;
+  display: block;
+  padding-left: 15px;
+  margin-left: 5px;
+  background: url("svg/twitter-bubble.svg") left no-repeat;
+  width: 15%;
+  float: left;
+  color: #8a9aa4;
+}
+
+.twitter__container .twitter__icon .twitter-heart {
+  width: 10px;
+  height: 14px;
+  display: block;
+  padding-left: 15px;
+  margin-left: 5px;
+  background: url("svg/twitter-heart.svg") left no-repeat;
+  width: 15%;
+  float: left;
+  color: #8a9aa4;
+}
+
+.twitter__container .twitter__icon .forcus-button {
+	width: 50px;
+	height: 17px;
+	border: 1px solid #333;
+	appearance: none;
+  border-radius: 5px;
+  background: #a9a9a9;
+  color: #fff;
+	padding-bottom: 3px;
+  font-size: 13px;
+	cursor : pointer;
+}
+
+.twitter__container .twitter__icon .forcus-button:active{
+	background: #696969;
+	border: none;
+}
+
+.twitter__container .twitter__icon .flag-item {
+	width: 14px;
+	height: 14px;
+  display: block;
+  padding-left: 5px;
+  margin-left: 5px;
+  float: left;
+  color: #8a9aa4;
+	cursor : pointer;
+	margin-right: 25px;
+}
+
+.twitter__container .twitter__icon .is-active {
+	color: red;
+}
+
+
+.twitter__container .twitter__icon .twitter-loop {
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding-left: 15px;
+  margin-left: 5px;
+  background: url("svg/twitter-loop.svg") left no-repeat;
+  width: 15%;
+  float: left;
+  color: #8a9aa4;
+}
+
+
+.selected {
+	opacity: 1.0;
+}
+
+.linkSelected {
+	stroke: tomato;
+	opacity: 1.0;
+}
+
+.conected {
+	fill: orange;
+}
+
+.n_selected{
+	opacity: 0.1;
+}
+
+.this_node{
+	stroke: red;
+}
+
+.t_selected{
+	stroke-width: 3;
+}
+
+.p_selected{
+	stroke: red;
+	stroke-opacity: 1;
+}
+
+
+
+.hint_button {
+	border: 1px solid #333;
+	appearance: none;
+  border-radius: 5px;
+  background: #4682b3;
+  color: #fff;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.hint_button:hover{
+	background: #284a66;
+}
+
+.hint_button:active{
+	background: #4682b3;
+	border: none;
+}
+
+.hint{
+	text-align: center;
+}
+
+/* タブメニュー */
+.tab-menu {
+  display: flex;
+  margin: 0 -5px;
+}
+
+.tab-menu__item {
+  box-sizing: border-box;
+	list-style-type: none;
+  padding: 0 5px;
+	margin-top: 10px;
+}
+
+
+.tab-trigger { /* label */
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.tab0{
+	background-color: lightgray;
+}
+.tab1{
+	background-color: #4682b4;
+}
+.tab2{
+	background-color: #008000;
+}
+.tab3{
+	background-color: #ffff00;
+}
+.tab4{
+	background-color: #e66767;
+}
+.tab5{
+	background-color: #cc661d;
+}
+.tab6{
+	background-color: #9370db;
+}
+.n-view{
+	background-color: lightgray;
+}
+
+.n-view.is-active {
+  background-color: lightblue;
+}
+.tab0.is-active {
+  background-color: lightblue;
+}
+.tab1.is-active {
+  background-color: lightblue;
+}
+.tab2.is-active {
+  background-color: lightblue;
+}
+.tab3.is-active {
+  background-color: lightblue;
+}
+.tab4.is-active {
+  background-color: lightblue;
+}
+.tab5.is-active {
+  background-color: lightblue;
+}
+.tab6 .is-active {
+  background-color: lightblue;
+}
+
+
+/* タブコンテンツ */
+.tab-content {
+  border: 1px solid #ccc;
+}
+.tab-content__item {
+  box-sizing: border-box;
+  display: none;
+  text-align: left;
+}
+.tab-content__item.is-active {
+  display: block;
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

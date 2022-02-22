@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>サンプルコード - 基本的 DOM インターフェイスによる HTML 要素の動的操作法</title>
+<style>
+#ymd{font-size: 10pt; width:60}
+#txt{font-size: 10pt; width:200}
+td    {font-size: 10pt;}
+#num {width: 20px};
+</style>
+<script language="JavaScript">
+<!--
+    var i = 1;
+    var maxrows = 10;
+    function hage() {
+        i++;
+        // Tbody への参照を取得します
+        var mybody=document.getElementById("histTablebody");
+        // セルを生成します
+            // タグ名が TR である要素を生成します
+            mycurrent_row=document.createElement("TR");
+            mycurrent_row.setAttribute("id","histrow"+i);
+                // -------
+                // タグ名が TD である要素を生成します
+                mycurrent_cell=document.createElement("TD");
+                mycurrent_cell.setAttribute("id","num");
+                // テキストノードを生成します。
+                currenttext=document.createTextNode(i);
+                // 生成したテキストノードを TD セルへと付加します
+                mycurrent_cell.appendChild(currenttext);
+            // その TD セルを TR 行へと付加します
+            mycurrent_row.appendChild(mycurrent_cell);
+                // -------
+                // タグ名が TD である要素を生成します
+                mycurrent_cell=document.createElement("TD");
+                // テキストノードを生成します。
+                currenttext=document.createTextNode("入社年月");
+                // 生成したテキストノードを TD セルへと付加します
+                mycurrent_cell.appendChild(currenttext);
+            // その TD セルを TR 行へと付加します
+            mycurrent_row.appendChild(mycurrent_cell);
+                // -------
+                // タグ名が TD である要素を生成します
+                mycurrent_cell=document.createElement("TD");
+                // フォームノードを生成します
+                mycurrent_form=document.createElement("INPUT");
+                mycurrent_form.setAttribute("type","TEXT");
+                mycurrent_form.setAttribute("name","ENTRY_Y" + i);
+                mycurrent_form.setAttribute("value","");
+                mycurrent_form.setAttribute("id", "ymd");
+                // 生成したフォームノードを TD セルへと付加します
+                mycurrent_cell.appendChild(mycurrent_form);
+                // テキストノードを生成します。
+                currenttext=document.createTextNode("年");
+                // 生成したテキストノードを TD セルへと付加します
+                mycurrent_cell.appendChild(currenttext);
+                // フォームノードを生成します
+                mycurrent_form=document.createElement("INPUT");
+                mycurrent_form.setAttribute("type","TEXT");
+                mycurrent_form.setAttribute("name","ENTRY_M" + i);
+                mycurrent_form.setAttribute("value","");
+                mycurrent_form.setAttribute("id", "ymd");
+                // 生成したフォームノードを TD セルへと付加します
+                mycurrent_cell.appendChild(mycurrent_form);
+                // テキストノードを生成します。
+                currenttext=document.createTextNode("月");
+                // 生成したテキストノードを TD セルへと付加します
+                mycurrent_cell.appendChild(currenttext);
+            // その TD セルを TR 行へと付加します
+            mycurrent_row.appendChild(mycurrent_cell);
+                // -------
+                // タグ名が TD である要素を生成します
+                mycurrent_cell=document.createElement("TD");
+                // テキストノードを生成します。
+                currenttext=document.createTextNode("会社名");
+                // 生成したテキストノードを TD セルへと付加します
+                mycurrent_cell.appendChild(currenttext);
+            // その TD セルを TR 行へと付加します
+            mycurrent_row.appendChild(mycurrent_cell);
+                // -------
+                // タグ名が TD である要素を生成します
+                mycurrent_cell=document.createElement("TD");
+                // フォームノードを生成します
+                mycurrent_form=document.createElement("INPUT");
+                mycurrent_form.setAttribute("type","TEXT");
+                mycurrent_form.setAttribute("name","COMPANY_NAME" + i);
+                mycurrent_form.setAttribute("value","");
+                mycurrent_form.setAttribute("id", "txt");
+                // 生成したフォームノードを TD セルへと付加します
+                mycurrent_cell.appendChild(mycurrent_form);
+            // その TD セルを TR 行へと付加します
+            mycurrent_row.appendChild(mycurrent_cell);
+        // その TR 行を TBODY へと付加します
+        mybody.appendChild(mycurrent_row);
+        // 削除ボタンを有効にする
+        document.hogehoge.delrow.disabled=false;
+        // テーブルの数（行の数）がmaxrows以上の場合は
+        // 追加ボタンを無効にする
+        if(i>=maxrows){
+            document.hogehoge.addrow.disabled=true;
+        }
+    }
+    var hige =    function() {
+        var mytable=document.getElementById("histTablebody");
+        var removeTable=document.getElementById("histrow"+i);
+        mytable.removeChild(removeTable);
+        i--;
+        // テーブルの数（行の数）が0の場合は
+        // 削除ボタンを無効にする
+        if(i==1){
+            document.hogehoge.delrow.disabled=true;
+        }
+        // 追加ボタンを有効にする
+        document.hogehoge.addrow.disabled=false;
+    }
+    var result =    function() {
+        alert('あなたの履歴は'+i+'件です。');
+    }
+//-->
+</script>
+</head>
+<body onload="document.hogehoge.delrow.disabled=true;">
+<h1>履歴書</h1>
+<form name="hogehoge">
+    <div id="hist">
+        <table border="1">
+            <tbody  id="histTablebody">
+                <tr id="histrow1">
+                    <td id="num">1</td>
+                    <td>入社年月</td>
+                    <td><input type="text" name="ENTRY_Y1" id="ymd">年
+                    <input type="text" name="ENTRY_M1" id="ymd">月</td>
+                    <td>会社名</td>
+                    <td><input type="text" name="COMPANY_NAME1" id="txt"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <input type="button" id=addrow value="行を追加"
+                onClick="hage();">
+            </td>
+            <td>
+                <input type="button" id=delrow value="行を削除"
+                onClick="hige();" disabled="true">
+            </td>
+            <td>
+                <input type="button" value="登録" onClick="result()">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -335,7 +335,7 @@ function root_click(i){
 
   tree_g = make_g()
   make_tree(i, tree_data, tree_g);
-  
+
   var tree_d = d3.selectAll("rect").data();
   var node_array = new Array();
   d3.selectAll("circle")
@@ -638,7 +638,7 @@ function discussionPoint(id) {
   var data = d_data.data();
 
   if (focus_count % 2 != 0){
-    d_data.style("stroke", '#dc143c');
+    // d_data.style("stroke", '#dc143c');
     tree_g.transition()
       .duration(550)
       .call(tree_zoom.transform, transform(data[0].x, data[0].y))

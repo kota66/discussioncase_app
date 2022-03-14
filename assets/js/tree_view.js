@@ -302,7 +302,7 @@ function tweet_data_insert( time, text, no, user, favorite, retweet, tweet_id, f
 function make_g(){
   d3.select("div#center-container").select("svg").remove();
   var tree_zoom=d3.zoom()
-    .scaleExtent([1, 3])
+    .scaleExtent([0, 3])
     .on("zoom", tree_zoomed);
 
   const height = 800;
@@ -316,9 +316,6 @@ function make_g(){
       .attr("height", height)
     .attr("viewBox", "" + vbox_x + " " + vbox_y + " " + vbox_width + " " + vbox_height) ;	// viewBox属性を付加
 
-  var tree_zoom=d3.zoom()
-  	  .scaleExtent([1, 3])
-  	  .on("zoom", tree_zoomed);
 
   // 全体をグループ化
   var tree_g = tree_svg.append("g");
